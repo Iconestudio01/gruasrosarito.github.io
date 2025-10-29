@@ -1,0 +1,114 @@
+/* style.css - versión moderna y optimizada */
+/* Nota: si quieres minificarlo, puedes usar un minifier online o en build step */
+
+:root{
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --primary:#0b3d91;
+  --accent:#ff6b35;
+  --muted:#6b7280;
+  --radius:12px;
+  --container:1100px;
+  --gap:1.25rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Container */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(180deg, rgba(11,61,145,0.98), rgba(11,61,145,0.95));
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:0 2px 10px rgba(11,61,145,0.08);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  justify-content:space-between;
+  padding:0.9rem 1rem;
+}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:white}
+.logo{height:36px;width:auto}
+.brand-text{font-weight:700;letter-spacing:0.6px}
+
+.nav{display:flex;gap:1rem}
+.nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600}
+.cta{display:flex;align-items:center;gap:0.6rem}
+.phone{background:rgba(255,255,255,0.08);padding:0.4rem 0.8rem;border-radius:8px;color:white;text-decoration:none;font-weight:700}
+.menu-btn{display:none;background:transparent;border:0;color:white;font-size:1.2rem}
+
+/* Hero */
+.hero{padding:3rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+.hero-content h1{font-size:2rem;margin:0 0 .5rem;color:var(--primary)}
+.lead{color:var(--muted);margin-bottom:1rem}
+.hero-media img{width:100%;height:auto;border-radius:14px;box-shadow:0 8px 30px rgba(11,61,145,0.08)}
+
+/* Buttons */
+.btn{display:inline-block;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;font-weight:700}
+.btn-primary{background:var(--primary);color:white}
+.btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+
+/* Sections */
+.section{padding:2rem 0}
+.section-alt{background:linear-gradient(180deg,#fff,#f5f8ff)}
+.section-title{font-size:1.25rem;margin:0 0 .5rem;color:var(--primary);font-weight:800}
+.section-sub{color:var(--muted);margin-bottom:1rem}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--card);padding:1.2rem;border-radius:12px;box-shadow:0 6px 18px rgba(13,24,40,0.04)}
+.card h3{margin-top:0}
+
+/* About grid */
+.about-grid{display:grid;grid-template-columns:1fr 280px;gap:1rem;align-items:center}
+
+/* Testimonials */
+.testimonials{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+blockquote{background:white;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04);margin:0;font-style:normal}
+blockquote footer{margin-top:0.75rem;color:var(--muted);font-size:0.9rem}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:420px 1fr;gap:1rem;align-items:start}
+.contact-card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.map-card .map-placeholder{height:220px;border-radius:12px;background:linear-gradient(180deg,#e9eef8,#f8fbff);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted)}
+
+/* Footer */
+.site-footer{padding:1rem 0;background:#041533;color:#cfe1ff}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+
+/* Utilities */
+.muted{color:var(--muted)}
+.quick-info{display:flex;gap:1rem;margin-top:1rem;list-style:none;padding:0}
+.header-inner, .footer-inner{padding-left:0;padding-right:0}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr; padding-bottom:1rem}
+  .cards{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .testimonials{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav{display:none}
+  .menu-btn{display:block}
+}
